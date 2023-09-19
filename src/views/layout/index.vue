@@ -2,12 +2,14 @@
   <div class="layout">
     <!-- 左侧导航 -->
     <div class="menu">
-      <Menu></Menu>
+      <!-- 父亲变量iscollapse传递给子组件 -->
+      <Menu :isCollapse="isCollapse"></Menu>
     </div>
 
     <!-- 右侧内容 -->
-    <div class="content">
-      <Content></Content>
+    <!-- 动态绑定一个class，如果isCollapse为true时small生效 -->
+    <div class="content" :class="{small:isCollapse}">
+      <Content @changeShow="changeShow" :isCollapse="isCollapse"></Content>
     </div>
   </div>
 </template>
@@ -21,8 +23,18 @@ export default {
   components: {
     Menu,
     Content
+  },
+  // 两个兄弟组件之间要进行数据交互，用父亲传递
+  data () {
+    return {
+      isCollapse: false // 是否折叠？false为不折叠
+    }
+  },
+  methods: {
+    changeShow () {
+      this.isCollapse = !this.isCollapse
+    }
   }
-
 }
 </script>
 
@@ -36,7 +48,7 @@ export default {
         bottom:0;
     }
     .content{
-        padding-left:100px;
+        padding-left:200px;
         // background-color: pink;
     }
     .small{

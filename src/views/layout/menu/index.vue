@@ -7,8 +7,10 @@
       background-color="#112f50"
       text-color="#fff"
       active-text-color="#ffd04b"
-      router>
+      router
+      :collapse="isCollapse" >
       <!-- router开启路由，下面的index会变成path路径 -->
+      <!-- :collapse="iscollapse" 是否折叠，用iscollapse这个变量控制 -->
       <el-menu-item>
         <span slot="title">采购管理系统</span>
       </el-menu-item>
@@ -54,7 +56,13 @@
 
 <script>
 export default {
-
+  // 子组件接受父亲传下来的数据
+  props: ['isCollapse'],
+  data () {
+    return {
+      // iscollapse: false
+    }
+  }
 }
 </script>
 
@@ -67,4 +75,9 @@ export default {
   background: #1e78bf !important;
   color: #fff !important;
 }
+// 不折叠宽度为200
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
 </style>
