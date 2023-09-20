@@ -20,36 +20,52 @@
         <span slot="title">首页</span>
       </el-menu-item>
 
-      <el-submenu index="1">
+      <el-submenu index="/product">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>产品管理</span>
         </template>
         <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
+          <el-menu-item index="/product/list">
+            <i class="el-icon-setting"></i>
+            <span slot="title">产品列表</span>
+          </el-menu-item>
+          <el-menu-item index="/product/category">
+            <i class="el-icon-setting"></i>
+            <span slot="title">产品分类</span>
+          </el-menu-item>
         </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
       </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+
+      <el-submenu index="/order">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>订单管理</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="/order/order-list">
+            <i class="el-icon-setting"></i>
+            <span slot="title">订单列表</span>
+          </el-menu-item>
+          <el-menu-item index="/order/collect">
+            <i class="el-icon-setting"></i>
+            <span slot="title">订单汇总</span>
+          </el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+
+      <el-submenu index="/advert">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>广告管理</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="/advert/advert-list">
+            <i class="el-icon-setting"></i>
+            <span slot="title">广告列表</span>
+          </el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
